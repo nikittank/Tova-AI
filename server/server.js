@@ -28,8 +28,9 @@ try {
 // Enhanced CORS configuration
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://tova-ai.vercel.app',
-  'https://tova-ai-frontend.vercel.app',
+  'https://tova-ai.netlify.app',
+  'https://tova-ai-frontend.netlify.app',
+  'https://your-custom-domain.netlify.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
