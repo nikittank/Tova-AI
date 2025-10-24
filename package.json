@@ -1,0 +1,20 @@
+{
+  "name": "tova-ai",
+  "version": "1.0.0",
+  "description": "Tova AI - Intelligent Database Assistant",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-client && npm run install-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikittank/Tova-AI.git"
+  },
+  "keywords": ["AI", "SQL", "Database", "React", "Node.js"],
+  "author": "Tova AI",
+  "license": "MIT"
+}
