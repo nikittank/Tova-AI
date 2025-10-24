@@ -1,4 +1,5 @@
 # Tova-AI
+<img width="1918" height="891" alt="Screenshot 2025-10-24 145624" src="https://github.com/user-attachments/assets/d96b3774-8435-493e-9d3f-2f98824ea9f2" />
 
 Tova AI - Intelligent Database Assistant
 
