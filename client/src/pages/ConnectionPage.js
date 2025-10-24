@@ -388,32 +388,30 @@ const ConnectionPage = ({ onConnect }) => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <Button
+                    <button
+                      type="button"
                       onClick={testConnection}
                       disabled={isLoading}
-                      variant="secondary"
-                      size="small"
-                      className="flex-1 flex items-center justify-center"
+                      className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
                     >
                       <FiPlay className="mr-2" size={16} />
                       Test
-                    </Button>
+                    </button>
 
-                    <Button
+                    <button
+                      type="button"
                       onClick={handleSaveConnection}
-                      variant="secondary"
-                      size="small"
-                      className="flex-1 flex items-center justify-center"
+                      className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
                     >
                       <FiSave className="mr-2" size={16} />
                       Save
-                    </Button>
+                    </button>
 
                     <Button
                       type="submit"
                       disabled={isLoading}
                       variant="primary"
-                      size="small"
+                      size="medium"
                       className="flex-2 flex items-center justify-center"
                       style={{ backgroundColor: '#F69EAE', color: 'black' }}
                     >

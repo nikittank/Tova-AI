@@ -9,17 +9,31 @@ import logo from '../images/hlogo.png';
 
 const Header = ({ user, onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-  // const [pagesMenuOpen, setPagesMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 50);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past 100px
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems = [
     { name: 'Features', href: '#features', icon: FiZap },
@@ -38,8 +52,8 @@ const Header = ({ user, onLogout }) => {
   return (
     <motion.header
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed w-full z-50 transition-all duration-500"
+      animate={{ y: isVisible ? 0 : -100 }}
+      className="fixed w-full z-50 transition-all duration-300"
       style={{ top: '0.5cm' }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -139,7 +153,7 @@ const Header = ({ user, onLogout }) => {
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-5 py-2 text-black rounded-full font-bold transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2"
+                    className="px-5 py-2 text-gray-700 rounded-full font-bold transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2"
                     style={{ backgroundColor: '#F69EAE' }}
                   >
                     <FiUserPlus size={16} />
@@ -167,34 +181,40 @@ const Header = ({ user, onLogout }) => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="lg:hidden mt-6 pt-6 border-t border-gray-200/60 bg-white/95 backdrop-blur-xl rounded-3xl mx-4 px-4 py-4 shadow-xl border border-white/40"
+                className="lg:hidden absolute top-full left-0 right-0 mt-4 mx-4"
               >
-                <div className="space-y-2">
-                  {navItems.map((item) => (
-                    <motion.a
-                      key={item.name}
-                      href={item.href}
-                      whileHover={{ x: 4 }}
-                      className="flex items-center space-x-3 px-5 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-all font-medium"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <item.icon size={18} />
-                      <span>{item.name}</span>
-                    </motion.a>
-                  ))}
-
-                  {!user && (
-                    <div className="pt-4 border-t border-gray-200/60 space-y-2">
-                      <motion.button
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 overflow-hidden">
+                  <div className="p-6 space-y-1">
+                    {navItems.map((item) => (
+                      <motion.a
+                        key={item.name}
+                        href={item.href}
                         whileHover={{ x: 4 }}
-                        className="w-full flex items-center space-x-3 px-5 py-3 text-black rounded-full font-bold shadow-lg"
-                        style={{ backgroundColor: '#F69EAE' }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center space-x-4 px-4 py-4 text-gray-700 hover:text-gray-900 hover:bg-gray-50/80 rounded-xl transition-all font-medium text-base"
+                        onClick={() => setMobileMenuOpen(false)}
                       >
-                        <FiUserPlus size={18} />
-                        <span>Get Started</span>
-                      </motion.button>
-                    </div>
-                  )}
+                        <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center">
+                          <item.icon size={20} className="text-gray-600" />
+                        </div>
+                        <span>{item.name}</span>
+                      </motion.a>
+                    ))}
+
+                    {!user && (
+                      <div className="pt-4 mt-4 border-t border-gray-200/60">
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full flex items-center justify-center space-x-3 px-6 py-4 text-black rounded-xl font-bold shadow-lg text-base"
+                          style={{ backgroundColor: '#F69EAE' }}
+                        >
+                          <FiUserPlus size={20} />
+                          <span>Get Started</span>
+                        </motion.button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             )}
