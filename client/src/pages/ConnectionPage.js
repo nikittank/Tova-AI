@@ -8,6 +8,42 @@ import { motion, AnimatePresence } from 'framer-motion';
 import GridBackground from '../components/GridBackground';
 import Button from '../components/Button';
 
+// Move InputField component outside to prevent re-creation on each render
+const InputField = ({ label, name, type = "text", icon, placeholder, className = "", value, onChange, error, showPassword, onTogglePassword }) => (
+  <div className={className}>
+    <label className="block text-sm font-bold text-gray-900 mb-2 flex items-center">
+      {icon}
+      {label}
+    </label>
+    <div className="relative">
+      <input
+        type={type === "password" ? (showPassword ? "text" : "password") : type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        className={`w-full px-4 py-3 ${type === "password" ? "pr-12" : ""} border-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400 bg-white/80 backdrop-blur-sm transition-all shadow-sm ${error ? 'border-red-300 bg-red-50/50' : 'border-gray-200/60 hover:border-gray-300'
+          }`}
+        placeholder={placeholder}
+      />
+      {type === "password" && (
+        <button
+          type="button"
+          onClick={onTogglePassword}
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+        </button>
+      )}
+    </div>
+    {error && (
+      <p className="text-red-500 text-xs mt-1 flex items-center">
+        <FiXCircle className="mr-1" size={12} />
+        {error}
+      </p>
+    )}
+  </div>
+);
+
 const ConnectionPage = ({ onConnect }) => {
   const [formData, setFormData] = useState({
     host: '0.tcp.in.ngrok.io',
@@ -212,40 +248,7 @@ const ConnectionPage = ({ onConnect }) => {
     setSavedConnections(prev => prev.filter(conn => conn.id !== connectionId));
   };
 
-  const InputField = ({ label, name, type = "text", icon, placeholder, className = "" }) => (
-    <div className={className}>
-      <label className="block text-sm font-bold text-gray-900 mb-2 flex items-center">
-        {icon}
-        {label}
-      </label>
-      <div className="relative">
-        <input
-          type={type === "password" ? (showPassword ? "text" : "password") : type}
-          name={name}
-          value={formData[name]}
-          onChange={handleChange}
-          className={`w-full px-4 py-3 ${type === "password" ? "pr-12" : ""} border-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400 bg-white/80 backdrop-blur-sm transition-all shadow-sm ${errors[name] ? 'border-red-300 bg-red-50/50' : 'border-gray-200/60 hover:border-gray-300'
-            }`}
-          placeholder={placeholder}
-        />
-        {type === "password" && (
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
-          </button>
-        )}
-      </div>
-      {errors[name] && (
-        <p className="text-red-500 text-xs mt-1 flex items-center">
-          <FiXCircle className="mr-1" size={12} />
-          {errors[name]}
-        </p>
-      )}
-    </div>
-  );
+
 
   return (
     <GridBackground className="flex items-center justify-center p-4">
@@ -323,6 +326,9 @@ const ConnectionPage = ({ onConnect }) => {
                     name="connectionName"
                     icon={<FiBookmark className="mr-2 text-blue-600" size={16} />}
                     placeholder="My Production Database"
+                    value={formData.connectionName}
+                    onChange={handleChange}
+                    error={errors.connectionName}
                   />
 
                   <div className="grid grid-cols-2 gap-4">
@@ -331,12 +337,18 @@ const ConnectionPage = ({ onConnect }) => {
                       name="host"
                       icon={<FiServer className="mr-2 text-green-600" size={16} />}
                       placeholder="localhost"
+                      value={formData.host}
+                      onChange={handleChange}
+                      error={errors.host}
                     />
                     <InputField
                       label="Port"
                       name="port"
                       icon={<FiWifi className="mr-2 text-purple-600" size={16} />}
                       placeholder="3306"
+                      value={formData.port}
+                      onChange={handleChange}
+                      error={errors.port}
                     />
                   </div>
 
@@ -345,6 +357,9 @@ const ConnectionPage = ({ onConnect }) => {
                     name="database"
                     icon={<FiDatabase className="mr-2 text-indigo-600" size={16} />}
                     placeholder="CompanyDB"
+                    value={formData.database}
+                    onChange={handleChange}
+                    error={errors.database}
                   />
 
                   <div className="grid grid-cols-2 gap-4">
@@ -353,6 +368,9 @@ const ConnectionPage = ({ onConnect }) => {
                       name="user"
                       icon={<FiUser className="mr-2 text-emerald-600" size={16} />}
                       placeholder="root"
+                      value={formData.user}
+                      onChange={handleChange}
+                      error={errors.user}
                     />
                     <InputField
                       label="Password"
@@ -360,6 +378,11 @@ const ConnectionPage = ({ onConnect }) => {
                       type="password"
                       icon={<FiLock className="mr-2 text-red-600" size={16} />}
                       placeholder="••••••••"
+                      value={formData.password}
+                      onChange={handleChange}
+                      error={errors.password}
+                      showPassword={showPassword}
+                      onTogglePassword={() => setShowPassword(!showPassword)}
                     />
                   </div>
 
