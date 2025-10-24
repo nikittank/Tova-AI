@@ -792,7 +792,7 @@ const TovaAi = ({ onGetStarted }) => {
               <ul className="space-y-3 text-gray-400">
                 {['Features', 'Database', 'Documentation'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-white transition-colors">{item}</a>
+                    <button className="hover:text-white transition-colors text-left">{item}</button>
                   </li>
                 ))}
               </ul>
@@ -803,7 +803,7 @@ const TovaAi = ({ onGetStarted }) => {
               <ul className="space-y-3 text-gray-400">
                 {['About', 'Contact'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="hover:text-white transition-colors">{item}</a>
+                    <button className="hover:text-white transition-colors text-left">{item}</button>
                   </li>
                 ))}
               </ul>
