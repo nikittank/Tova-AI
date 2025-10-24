@@ -128,7 +128,7 @@ const TableNode = ({ data, selected }) => {
         return;
       }
 
-      const url = `http://localhost:5000/api/table-summary/${connectionId}/${data.tableName}`;
+      const url = `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/table-summary/${connectionId}/${data.tableName}`;
       console.log('Fetching table summary from:', url);
       console.log('Using connection ID:', connectionId);
 

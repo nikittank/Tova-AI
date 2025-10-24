@@ -36,7 +36,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
       setError(null);
 
       const tablesResponse = await fetch(
-        `http://localhost:5000/api/tables/${connectionId}?password=${encodeURIComponent(currentConnection.config.password)}`,
+        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/tables/${connectionId}?password=${encodeURIComponent(currentConnection.config.password)}`,
         { signal: controller.signal }
       );
 
@@ -56,7 +56,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
       const detailsPromises = tablesData.tables.map(async (table) => {
         try {
           const detailResponse = await fetch(
-            `http://localhost:5000/api/table-details/${connectionId}/${table.name}?password=${encodeURIComponent(currentConnection.config.password)}`,
+            `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/table-details/${connectionId}/${table.name}?password=${encodeURIComponent(currentConnection.config.password)}`,
             { signal: controller.signal }
           );
 
@@ -114,7 +114,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
     setQueryResults({ results: [], fields: [] });
 
     try {
-      const response = await fetch('http://localhost:5000/api/query', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -180,7 +180,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
 
     try {
       // Step 1: Generate SQL query
-      const response = await fetch('http://localhost:5000/api/generate-query', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/generate-query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -204,7 +204,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
       setQuery(data.query);
 
       // Step 2: Execute the query automatically
-      const queryResponse = await fetch('http://localhost:5000/api/query', {
+      const queryResponse = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -222,7 +222,7 @@ const WorkspacePage = ({ currentConnection, onDisconnect }) => { // onDisconnect
 
           // Step 3: Always send results back to AI for explanation and insights
           try {
-            const explanationResponse = await fetch('http://localhost:5000/api/explain-results', {
+            const explanationResponse = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/explain-results`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({

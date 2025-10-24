@@ -33,7 +33,7 @@ const SchemaVisualizer = ({
     
     try {
       // Fetch records first
-      const recordsResponse = await fetch('http://localhost:5000/api/table-records', {
+      const recordsResponse = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/table-records`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const SchemaVisualizer = ({
       setRecords(recordsData.results || []);
 
       // Fetch summary separately (don't block on it) - Only AI generated
-      fetch(`http://localhost:5000/api/table-summary/${connectionId}/${tableData.tableName}`)
+      fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/table-summary/${connectionId}/${tableData.tableName}`)
         .then(summaryResponse => {
           if (summaryResponse.ok) {
             return summaryResponse.json();
