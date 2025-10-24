@@ -80,18 +80,9 @@ npm start
 3. Start asking questions in natural language
 4. Watch as Tova AI converts your questions to SQL and executes them
 
-## Contributing
+To connect you database to TOVA AI 
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<img width="602" height="395" alt="image" src="https://github.com/user-attachments/assets/b55fef74-722c-46f9-ae02-dc1efa883709" />
 
-## License
+<img width="1108" height="416" alt="image" src="https://github.com/user-attachments/assets/91b5b789-7257-4e78-b822-2967aa63277b" />
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-Project Link: [https://github.com/nikittank/Tova-AI](https://github.com/nikittank/Tova-AI)
