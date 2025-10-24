@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  FiLogIn, FiUserPlus, FiMenu, FiX, FiUser, FiSettings,
+  FiUserPlus, FiMenu, FiX, FiUser, FiSettings,
   FiHelpCircle, FiLogOut, FiChevronDown, FiDatabase,
   FiCode, FiLayers, FiZap
 } from 'react-icons/fi';
@@ -11,7 +11,7 @@ const Header = ({ user, onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-  const [pagesMenuOpen, setPagesMenuOpen] = useState(false);
+  // const [pagesMenuOpen, setPagesMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +44,8 @@ const Header = ({ user, onLogout }) => {
     >
       <div className="max-w-6xl mx-auto px-6">
         <nav className={`relative transition-all duration-500 ${isScrolled
-            ? 'bg-white/90 backdrop-blur-3xl shadow-2xl border border-white/50 rounded-full px-8 py-2.5'
-            : 'bg-white/95 backdrop-blur-2xl shadow-xl border border-white/40 rounded-full px-8 py-2.5'
+          ? 'bg-white/90 backdrop-blur-3xl shadow-2xl border border-white/50 rounded-full px-8 py-2.5'
+          : 'bg-white/95 backdrop-blur-2xl shadow-xl border border-white/40 rounded-full px-8 py-2.5'
           }`}>
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -121,8 +121,8 @@ const Header = ({ user, onLogout }) => {
                               setProfileMenuOpen(false);
                             }}
                             className={`w-full flex items-center space-x-3 px-4 py-3 text-sm font-medium transition-all ${item.isLast
-                                ? 'text-red-600 hover:bg-red-50'
-                                : 'text-gray-700 hover:bg-gray-50'
+                              ? 'text-red-600 hover:bg-red-50'
+                              : 'text-gray-700 hover:bg-gray-50'
                               }`}
                           >
                             <item.icon size={16} />
