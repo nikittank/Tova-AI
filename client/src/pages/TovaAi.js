@@ -713,6 +713,14 @@ LIMIT 5;`}
             </div>
 
             {/* Developers */}
+            <div className="lg:col-span-2">
+              <div className="text-center mb-8">
+                <h4 className="text-xl font-bold text-black mb-4 flex items-center justify-center">
+                  <span className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: '#E25755' }}></span>
+                  Meet the Developers
+                </h4>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                 {/* Nikitta Card */}
                 <DeveloperCard
