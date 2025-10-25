@@ -68,10 +68,6 @@ const TovaAi = ({ onGetStarted }) => {
     }
   ];
 
-
-
-
-
   return (
     <GridBackground>
       <Header />
@@ -79,7 +75,7 @@ const TovaAi = ({ onGetStarted }) => {
       {/* First Section: Dashboard Preview Format */}
       <section className=" pt-28 pb-32 relative overflow-hidden">
         <div className="relative">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl ml-34 mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center min-h-[80vh]">
 
               {/* Left Side: Content */}
@@ -88,7 +84,7 @@ const TovaAi = ({ onGetStarted }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="space-y-16"
+                className="space-y-14"
               >
 
                 {/* Main Heading */}
@@ -98,10 +94,10 @@ const TovaAi = ({ onGetStarted }) => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <h1 className="text-4xl lg:text-6xl font-black text-gray-800 leading-tight">
+                  <h1 className="text-5xl lg:text-6xl font-black text-gray-800 leading-tight">
                     From Data Roots to
                     <br />
-                    <span className="text-5xl" style={{ color: '#dc6d6bff' }}>Knowledge Branches</span>
+                    <span className="text-[54px]" style={{ color: '#dc6d6bff' }}>Knowledge Branches</span>
                   </h1>
                 </motion.div>
 
@@ -717,22 +713,11 @@ LIMIT 5;`}
             </div>
 
             {/* Developers */}
-            <div className="lg:col-span-2">
-              <div className="text-center mb-8">
-                <h4 className="text-xl font-bold text-black mb-4 flex items-center justify-center">
-                  <span className="w-3 h-3 rounded-full mr-3" style={{ backgroundColor: '#E25755' }}></span>
-                  Meet the Developers
-                </h4>
-                <p className="text-gray-600 text-sm max-w-md mx-auto">
-                  The talented team behind Tova AI's innovative database solutions
-                </p>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                 {/* Nikitta Card */}
                 <DeveloperCard
                   name="Nikitta KS"
-                  role="Full Stack Developer"
+                  role="Full Stack AI Developer"
                   image={letraNImage}
                   alt="Nikitta KS"
                   portfolioUrl="https://nikittaksportfolio.netlify.app/"
@@ -744,7 +729,7 @@ LIMIT 5;`}
                 {/* Amrutha Card */}
                 <DeveloperCard
                   name="Amrutha Murthi"
-                  role="Full Stack Developer"
+                  role="AI Engineer"
                   image={cartaAImage}
                   alt="Amrutha Murthi"
                   portfolioUrl="https://amruthamurthi.netlify.app/"
