@@ -152,7 +152,7 @@ const TovaAi = ({ onGetStarted }) => {
                       alt="Cherry Tree"
                       className="h-auto object-cover object-left"
                       style={{
-                        width: '120%',
+                        width: '105%',
                         maxWidth: 'none',
                         filter: 'drop-shadow(0 10px 30px rgba(236, 72, 153, 0.3))'
                       }}
@@ -581,42 +581,6 @@ LIMIT 5;`}
               </motion.div>
             </div>
           </div>
-
-          {/* Call to Action - Modern Design */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-black mb-4">
-                Ready to Transform Your <span style={{ color: '#E75957' }}>MySQL Workflow?</span>
-              </h3>
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Join thousands of developers using Gemini AI for smarter MySQL database interactions
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  onClick={onGetStarted}
-                  size="large"
-                  variant="primary"
-                  style={{ backgroundColor: '#F69EAE', color: 'black' }}
-                >
-                  Start Free Trial
-                  <FiArrowRight className="inline ml-2" size={20} />
-                </Button>
-                <Button
-                  onClick={() => window.open('#demo', '_self')}
-                  className="flex items-center"
-                  size="large"
-                >
-                  Watch Demo
-                </Button>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
