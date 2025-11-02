@@ -297,7 +297,7 @@ const TovaAi = ({ onGetStarted }) => {
               </div>
               <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
                 <pre className="text-green-400 text-xs leading-relaxed">
-{`SELECT c.customer_name,
+                  {`SELECT c.customer_name,
     SUM(o.total_amount) as total_spent,
     COUNT(o.order_id) as order_count
 FROM customers c
@@ -404,182 +404,180 @@ LIMIT 5;`}
       </section>
 
       {/* Section 4: MySQL Performance & Benefits */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-16 relative">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-black mb-4">
+            <h2 className="text-3xl font-bold text-black mb-3">
               MySQL Database <span style={{ color: '#E75957' }}>Excellence</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               Exclusively designed for MySQL databases using Google Gemini AI, delivering unmatched performance and intelligent query optimization
             </p>
           </motion.div>
 
-          {/* Performance Metrics - Modern Layout */}
-          <div className="mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Performance Metrics - Compact 3-Column Layout */}
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div 
-                  className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                <div
+                  className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
                   style={{
                     backgroundColor: '#E75957',
-                    boxShadow: '0 10px 30px rgba(231, 89, 87, 0.3)'
+                    boxShadow: '0 8px 20px rgba(231, 89, 87, 0.25)'
                   }}
                 >
-                  <FiClock className="text-white" size={32} />
+                  <FiClock className="text-white" size={24} />
                 </div>
-                <div className="text-5xl font-black mb-2" style={{ color: '#E75957' }}>50%</div>
-                <h3 className="text-xl font-bold text-black mb-3">Faster Development</h3>
-                <p className="text-gray-600 leading-relaxed">Reduce MySQL query writing time significantly with intelligent automation and smart suggestions</p>
+                <div className="text-3xl font-black mb-1" style={{ color: '#E75957' }}>50%</div>
+                <h3 className="text-lg font-bold text-black mb-2">Faster Development</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Reduce MySQL query writing time with intelligent automation</p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div 
-                  className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                <div
+                  className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
                   style={{
                     backgroundColor: '#E75957',
-                    boxShadow: '0 10px 30px rgba(231, 89, 87, 0.3)'
+                    boxShadow: '0 8px 20px rgba(231, 89, 87, 0.25)'
                   }}
                 >
-                  <FiBarChart2 className="text-white" size={32} />
+                  <FiBarChart2 className="text-white" size={24} />
                 </div>
-                <div className="text-5xl font-black mb-2" style={{ color: '#E75957' }}>99.9%</div>
-                <h3 className="text-xl font-bold text-black mb-3">Query Accuracy</h3>
-                <p className="text-gray-600 leading-relaxed">Precise MySQL generation with contextual understanding and error-free execution</p>
+                <div className="text-3xl font-black mb-1" style={{ color: '#E75957' }}>99.9%</div>
+                <h3 className="text-lg font-bold text-black mb-2">Query Accuracy</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Precise MySQL generation with contextual understanding</p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div 
-                  className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                <div
+                  className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
                   style={{
                     backgroundColor: '#E75957',
-                    boxShadow: '0 10px 30px rgba(231, 89, 87, 0.3)'
+                    boxShadow: '0 8px 20px rgba(231, 89, 87, 0.25)'
                   }}
                 >
-                  <FiUsers className="text-white" size={32} />
+                  <FiUsers className="text-white" size={24} />
                 </div>
-                <div className="text-5xl font-black mb-2" style={{ color: '#E75957' }}>10K+</div>
-                <h3 className="text-xl font-bold text-black mb-3">Active Users</h3>
-                <p className="text-gray-600 leading-relaxed">Trusted by MySQL developers worldwide for mission-critical applications</p>
+                <div className="text-3xl font-black mb-1" style={{ color: '#E75957' }}>24/7</div>
+                <h3 className="text-lg font-bold text-black mb-2">AI Availability</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Round-the-clock intelligent query assistance</p>
               </motion.div>
             </div>
           </div>
 
-          {/* Features List - Clean Layout */}
-          <div className="mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4 group"
+          {/* Features List - Compact 2x2 Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-3 group"
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundColor: '#3B82F6',
+                  boxShadow: '0 3px 10px rgba(59, 130, 246, 0.25)'
+                }}
               >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    backgroundColor: '#3B82F6',
-                    boxShadow: '0 4px 15px rgba(59, 130, 246, 0.3)'
-                  }}
-                >
-                  <FiZap className="text-white" size={20} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Lightning Fast Performance</h3>
-                  <p className="text-gray-600 leading-relaxed">Sub-second MySQL query generation with optimized performance for complex database operations and real-time results.</p>
-                </div>
-              </motion.div>
+                <FiZap className="text-white" size={18} />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-black mb-1">Lightning Fast Performance</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Sub-second MySQL query generation with optimized performance for complex operations.</p>
+              </div>
+            </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4 group"
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-3 group"
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundColor: '#8B5CF6',
+                  boxShadow: '0 3px 10px rgba(139, 92, 246, 0.25)'
+                }}
               >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    backgroundColor: '#10B981',
-                    boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
-                  }}
-                >
-                  <FiShield className="text-white" size={20} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Enterprise Security</h3>
-                  <p className="text-gray-600 leading-relaxed">Bank-level encryption with SOC 2 compliance and advanced data protection protocols for enterprise environments.</p>
-                </div>
-              </motion.div>
+                <FiCpu className="text-white" size={18} />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-black mb-1">Gemini AI Powered</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Google's advanced Gemini AI learns from your patterns for personalized assistance.</p>
+              </div>
+            </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4 group"
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-3 group"
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundColor: '#F59E0B',
+                  boxShadow: '0 3px 10px rgba(245, 158, 11, 0.25)'
+                }}
               >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    backgroundColor: '#8B5CF6',
-                    boxShadow: '0 4px 15px rgba(139, 92, 246, 0.3)'
-                  }}
-                >
-                  <FiCpu className="text-white" size={20} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-black mb-2">Gemini AI Powered</h3>
-                  <p className="text-gray-600 leading-relaxed">Google's advanced Gemini AI learns from your patterns for personalized MySQL assistance and intelligent recommendations.</p>
-                </div>
-              </motion.div>
+                <FiDatabase className="text-white" size={18} />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-black mb-1">MySQL Specialized</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Built exclusively for MySQL with deep understanding of syntax and optimization techniques.</p>
+              </div>
+            </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4 group"
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-3 group"
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundColor: '#10B981',
+                  boxShadow: '0 3px 10px rgba(16, 185, 129, 0.25)'
+                }}
               >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    backgroundColor: '#F59E0B',
-                    boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
-                  }}
-                >
-                  <FiDatabase className="text-white" size={20} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-black mb-2">MySQL Specialized</h3>
-                  <p className="text-gray-600 leading-relaxed">Built exclusively for MySQL databases with deep understanding of MySQL syntax, functions, and optimization techniques.</p>
-                </div>
-              </motion.div>
-            </div>
+                <FiLayers className="text-white" size={18} />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-black mb-1">Smart Schema Analysis</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Intelligent database structure understanding for optimized query suggestions.</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -640,24 +638,24 @@ LIMIT 5;`}
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-6">
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/40 shadow-lg">
-                <h4 className="text-xl font-bold text-black mb-6 text-center">
+            <div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 mt-16 border border-gray-200/40 shadow-lg">
+                <h4 className="text-base font-bold text-black mb-3 text-center">
                   Quick Links
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   <li>
-                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-3 px-4 rounded-xl font-medium">
+                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-2 px-3 rounded-lg font-medium text-sm">
                       Features
                     </button>
                   </li>
                   <li>
-                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-3 px-4 rounded-xl font-medium">
+                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-2 px-3 rounded-lg font-medium text-sm">
                       Documentation
                     </button>
                   </li>
                   <li>
-                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-3 px-4 rounded-xl font-medium">
+                    <button className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all text-left w-full py-2 px-3 rounded-lg font-medium text-sm">
                       Get Started
                     </button>
                   </li>
@@ -666,9 +664,9 @@ LIMIT 5;`}
                       href="https://github.com/nikittank/Tova-AI"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all flex items-center py-3 px-4 rounded-xl font-medium"
+                      className="text-gray-700 hover:text-black hover:bg-gray-50/80 transition-all flex items-center py-2 px-3 rounded-lg font-medium text-sm"
                     >
-                      <FiGithub className="mr-3" size={18} />
+                      <FiGithub className="mr-2" size={16} />
                       Source Code
                     </a>
                   </li>
