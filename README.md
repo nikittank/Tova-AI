@@ -1,4 +1,13 @@
 # Tova-AI
+
+**Live Demo Links:**
+- **Vercel (Frontend 1):** [https://tova-ai.vercel.app/](https://tova-ai.vercel.app/)
+- **Netlify (Frontend 2):** [https://tova-ai.netlify.app/](https://tova-ai.netlify.app/)
+- **Render (Backend):** [https://tova-ai-backend.onrender.com/](https://tova-ai-backend.onrender.com/)
+
+> Note: Two frontend versions are hosted (on Vercel and Netlify) for testing and deployment comparison. Both connect to the same backend hosted on Render.
+
+
 <img width="1918" height="891" alt="Screenshot 2025-10-24 145624" src="https://github.com/user-attachments/assets/d96b3774-8435-493e-9d3f-2f98824ea9f2" />
 
 Tova AI - Intelligent Database Assistant
